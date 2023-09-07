@@ -6,7 +6,7 @@ import 'package:js/js.dart';
 
 // import 'net/net.dart' as net_alias;
 
-export 'util/error.dart';
+export 'util/util.dart';
 export 'net/net.dart';
 export 'polyfill/polyfill.dart';
 export 'extern/extern.dart';

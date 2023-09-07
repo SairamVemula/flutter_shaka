@@ -16,20 +16,6 @@ external void installPolyfills();
 @JS('PatchedMediaKeysApple.install')
 external void installPatchedMediaKeysApple();
 
-class FairPlayUtils {
-  external static initDataTransform(
-      Uint8List initData, dynamic spcUrl, Uint8List cert);
-}
-
-class StringUtils {
-  external static String fromBytesAutoDetect(Uint8List data);
-  external static Uint8List toUTF8(String data);
-}
-
-class Uint8ArrayUtils {
-  external static String toStandardBase64(Uint8List data);
-}
-
 String errorCodeName(int code) {
   return _findName(context['shaka']['util']['Error']['Code'], code);
 }
