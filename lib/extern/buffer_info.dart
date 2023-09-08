@@ -4,7 +4,7 @@ library shaka.extern;
 import 'dart:js';
 import 'dart:js_interop';
 
-import 'package:flutter_shaka/extern/buffered_range.dart';
+import 'buffered_range.dart';
 
 /// https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.BufferedInfo
 @JS('BufferedInfo')

@@ -25,20 +25,40 @@ class Player {
   /// JsFunction is shaka.extern.IAdManager.Factory
   external void setAdManagerFactory(
       JsFunction factory); //TODO: implement  shaka.extern.IAdManager.Factory
-  external Future<extern.Track> addChaptersTrack(String uri, String language,
-      [String mimeType]);
-  external Future<extern.Track> addTextTrackAsync(
+  @JS('addChaptersTrack')
+  external JSPromise _addChaptersTrack(String uri, String language,
+      [String? mimeType]);
+  Future<extern.Track> addChaptersTrack(String uri, String language,
+          [String? mimeType]) =>
+      _addChaptersTrack(uri, language, mimeType).toDart as Future<extern.Track>;
+  @JS('addTextTrackAsync')
+  external JSPromise _addTextTrackAsync(
       String uri, String language, String kind,
-      [bool mimeType, bool codec, bool label, bool forced]);
-  external Future<extern.Track> addThumbnailsTrack(String uri,
-      [String mimeType]);
-  external Future<void> attach(MediaElement mediaElementnon,
-      [bool initializeMediaSource]);
+      [bool? mimeType, bool? codec, bool? label, bool? forced]);
+  Future<extern.Track> addTextTrackAsync(
+          String uri, String language, String kind,
+          [bool? mimeType, bool? codec, bool? label, bool? forced]) =>
+      _addTextTrackAsync(uri, language, kind, mimeType, codec, label, forced)
+          .toDart as Future<extern.Track>;
+  @JS('addThumbnailsTrack')
+  external JSPromise _addThumbnailsTrack(String uri, [String? mimeType]);
+  Future<extern.Track> addThumbnailsTrack(String uri, [String? mimeType]) =>
+      _addThumbnailsTrack(uri, mimeType).toDart as Future<extern.Track>;
+  @JS('attach')
+  external JSPromise _attach(MediaElement mediaElementnon,
+      [bool? initializeMediaSource]);
+  Future<void> attach(MediaElement mediaElementnon,
+          [bool? initializeMediaSource]) =>
+      _attach(mediaElementnon, initializeMediaSource).toDart;
   external void attachCanvas(CanvasElement canvas);
   external void cancelTrickPlay();
   external bool configure(dynamic config, [dynamic value]);
-  external Future<void> destroy();
-  external Future<void> detach();
+  @JS('destroy')
+  external JSPromise _destroy();
+  Future<void> destroy() => _destroy().toDart;
+  @JS('detach')
+  external JSPromise _detach();
+  Future<void> detach() => _detach().toDart;
   external extern.DrmInfo drmInfo();
   external JsArray<extern.DrmSessionMetadata> getActiveSessionsMetadata();
   external dynamic getAdManager(); //TODO: implement shaka.extern.IAdManager
@@ -68,7 +88,10 @@ class Player {
   external JsArray<String> getTextLanguages();
   external JsArray<extern.LanguageRole> getTextLanguagesAndRoles();
   external JsArray<extern.Track> getTextTracks();
-  external Future<extern.Thumbnail?> getThumbnails(num trackId, num time);
+  @JS('getThumbnails')
+  external JSPromise _getThumbnails(num trackId, num time);
+  Future<extern.Thumbnail?> getThumbnails(num trackId, num time) =>
+      _getThumbnails(trackId, time).toDart as Future<extern.Thumbnail?>;
   external JsArray<extern.Track> getVariantTracks();
   external void goToLive();
   external bool isAudioOnly();
@@ -77,27 +100,31 @@ class Player {
   external bool isLive();
   external bool isTextTrackVisible();
   external String keySystem();
-  external Future<void> load(String assetUri,
-      [num? startTile, String? mimeType]);
+  @JS('load')
+  external JSPromise _load(String assetUri, [num? startTile, String? mimeType]);
+  Future<void> load(String assetUri, [num? startTile, String? mimeType]) =>
+      _load(assetUri, startTile, mimeType).toDart;
   external void resetConfiguration();
-  external bool retryStreaming([num retryDelaySeconds]);
+  external bool retryStreaming([num? retryDelaySeconds]);
   external Map<String, num> seekRange();
   external void selectAudioLanguage(String language,
-      [String role, num channelsCount, num safeMargin]);
-  external void selectTextLanguage(String language, [String role, bool forced]);
+      [String? role, num? channelsCount, num? safeMargin]);
+  external void selectTextLanguage(String language,
+      [String? role, bool? forced]);
   external void selectTextTrack(extern.Track language);
   external void selectVariantsByLabel(String label,
-      [bool clearBuffer, num safeMargin]);
+      [bool? clearBuffer, num? safeMargin]);
   external void selectVariantTrack(extern.Track track,
-      [bool clearBuffer, num safeMargin]);
+      [bool? clearBuffer, num? safeMargin]);
   external void setMaxHardwareResolution(num width, num height);
   external void setTextTrackVisibility(bool isVisible);
   external void setVideoContainer(Element videoContainer);
   external void trickPlay(num rate);
-  external JSPromise unload([bool? initializeMediaSource]);
-  Future unloadFuture([bool? initializeMediaSource]) {
-    return promiseToFuture(unload(initializeMediaSource));
-  }
+
+  @JS('unload')
+  external JSPromise _unload([bool? initializeMediaSource]);
+  Future unload([bool? initializeMediaSource]) =>
+      _unload(initializeMediaSource).toDart;
 
   external void updateStartTime(num startTime);
   external void addEventListener(String event, Function callback);
