@@ -2,14 +2,14 @@
 library shaka.dash;
 
 // ignore: depend_on_referenced_packages
-import 'package:js/js.dart';
+import 'dart:js_interop';
 
 @JS('DashParser')
 class DashParser {
   external DashParser();
   external void configure(config);
-  external void onExpirationUpdated(String sessionId, int expiration);
-  external Future start(uri, playerInterface);
+  external void onExpirationUpdated(String sessionId, num expiration);
+  external Future start(uri, playernumerface);
   external Future stop();
   external void update();
 }

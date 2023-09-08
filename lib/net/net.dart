@@ -3,7 +3,7 @@
 library shaka.net;
 
 // ignore: depend_on_referenced_packages
-import 'package:js/js.dart';
+import 'dart:js_interop';
 
 @JS('NetworkingEngine')
 class NetworkingEngine {

@@ -5,7 +5,7 @@ import 'dart:js';
 import 'dart:typed_data';
 
 // ignore: depend_on_referenced_packages
-import 'package:js/js.dart';
+import 'dart:js_interop';
 
 bool get isLoaded => context.hasProperty('shaka');
 bool get isNotLoaded => !isLoaded;
@@ -16,15 +16,15 @@ external void installPolyfills();
 @JS('PatchedMediaKeysApple.install')
 external void installPatchedMediaKeysApple();
 
-String errorCodeName(int code) {
+String errorCodeName(num code) {
   return _findName(context['shaka']['util']['Error']['Code'], code);
 }
 
-String errorCategoryName(int category) {
+String errorCategoryName(num category) {
   return _findName(context['shaka']['util']['Error']['Category'], category);
 }
 
-String _findName(JsObject object, int value) {
+String _findName(JsObject object, num value) {
   final List keys = context['Object'].callMethod('keys', [object]);
 
   try {

@@ -3,34 +3,35 @@
 @JS('shaka')
 library shaka;
 
+// ignore: depend_on_referenced_packages
+import 'dart:js';
+
+import 'dart:js_interop';
 import 'dart:html';
 
-// ignore: depend_on_referenced_packages
-import 'package:js/js.dart';
+import 'extern/extern.dart' as extern;
 import 'net/net.dart';
 
 @JS('Player')
 class Player {
   external Player(MediaElement element, [Function dependencyInjector]);
   // ignore: non_constant_identifier_names
-  external static int get LoadMode;
+  external static num get LoadMode;
   external String get version;
   external static bool isBrowserSupported();
-  external dynamic probeSupport(
-      bool promptsOkay); //TODO: implement shaka.extern.SupportType
-  external void registerSupportPlugin(String name, Function callback);
+  external extern.SupportType probeSupport(bool promptsOkay);
+  external void registerSupportPlugin(String name, JsFunction callback);
+
+  /// JsFunction is shaka.extern.IAdManager.Factory
   external void setAdManagerFactory(
-      dynamic factory); //TODO: implement  shaka.extern.IAdManager.Factory
-  external Future<dynamic> addChaptersTrack(String uri, String language,
-      [String mimeType]); //TODO: implement shaka.extern.Track
-  external Future<dynamic> addTextTrackAsync(
+      JsFunction factory); //TODO: implement  shaka.extern.IAdManager.Factory
+  external Future<extern.Track> addChaptersTrack(String uri, String language,
+      [String mimeType]);
+  external Future<extern.Track> addTextTrackAsync(
       String uri, String language, String kind,
-      [bool mimeType,
-      bool codec,
-      bool label,
-      bool forced]); //TODO: implement shaka.extern.Track
-  external Future<dynamic> addThumbnailsTrack(String uri,
-      [String mimeType]); //TODO: implement shaka.extern.Track
+      [bool mimeType, bool codec, bool label, bool forced]);
+  external Future<extern.Track> addThumbnailsTrack(String uri,
+      [String mimeType]);
   external Future<void> attach(MediaElement mediaElementnon,
       [bool initializeMediaSource]);
   external void attachCanvas(CanvasElement canvas);
@@ -38,45 +39,37 @@ class Player {
   external bool configure(dynamic config, [dynamic value]);
   external Future<void> destroy();
   external Future<void> detach();
-  external dynamic drmInfo(); //TODO: implement shaka.extern.DrmInfo
-  external List<dynamic>
-      getActiveSessionsMetadata(); //TODO: implement shaka.extern.DrmSessionMetadata
+  external extern.DrmInfo drmInfo();
+  external JsArray<extern.DrmSessionMetadata> getActiveSessionsMetadata();
   external dynamic getAdManager(); //TODO: implement shaka.extern.IAdManager
   external String getAssetUri();
-  external List<String> getAudioLanguages();
-  external List<dynamic>
-      getAudioLanguagesAndRoles(); //TODO: implement shaka.extern.LanguageRole
-  external dynamic
-      getBufferedInfo(); //TODO: implement shaka.extern.BufferedInfo
-  external double getBufferFullness();
-  external List<dynamic> getChapters(
-      String language); //TODO: implement shaka.extern.Chapter
-  external List<dynamic>
-      getChaptersTracks(); //TODO: implement shaka.extern.Track
-  external dynamic
-      getConfiguration(); //TODO: implement shaka.extern.PlayerConfiguration
-  external double getExpiration();
-  external List<dynamic> getImageTracks(); //TODO: implement shaka.extern.Track
+  external JsArray<String> getAudioLanguages();
+  external JsArray<extern.LanguageRole> getAudioLanguagesAndRoles();
+  external extern.BufferedInfo getBufferedInfo();
+  external num getBufferFullness();
+  external JsArray<extern.Chapter> getChapters(String language);
+  external JsArray<extern.Track> getChaptersTracks();
+  external extern.PlayerConfiguration getConfiguration();
+  external num getExpiration();
+  external JsArray<extern.Track> getImageTracks();
   external Map<String, String> getKeyStatuses();
-  external int getLoadMode();
-  external dynamic getManifest(); //TODO: implement shaka.extern.Manifest
-  external dynamic
-      getManifestParserFactory(); //TODO: implement shaka.extern.ManifestParser.Factory
+  external num getLoadMode();
+  external extern.Manifest getManifest();
+
+  /// JsFunction is shaka.extern.ManifestParser.Factory
+  external JsFunction getManifestParserFactory();
   external String getManifestType();
   external MediaElement getMediaElement();
   external NetworkingEngine getNetworkingEngine();
-  external double getPlaybackRate();
+  external num getPlaybackRate();
   external DateTime getPlayheadTimeAsDate();
   external DateTime getPresentationStartTimeAsDate();
-  external dynamic getStats(); //TODO: implement shaka.extern.Stats
-  external List<String> getTextLanguages();
-  external List<dynamic>
-      getTextLanguagesAndRoles(); //TODO: implement shaka.extern.LanguageRole
-  external List<dynamic> getTextTracks(); //TODO: implement shaka.extern.Track
-  external Future<dynamic?> getThumbnails(
-      double trackId, double time); //TODO: implement shaka.extern.Thumbnail
-  external List<dynamic>
-      getVariantTracks(); //TODO: implement shaka.extern.Track
+  external extern.Stats getStats();
+  external JsArray<String> getTextLanguages();
+  external JsArray<extern.LanguageRole> getTextLanguagesAndRoles();
+  external JsArray<extern.Track> getTextTracks();
+  external Future<extern.Thumbnail?> getThumbnails(num trackId, num time);
+  external JsArray<extern.Track> getVariantTracks();
   external void goToLive();
   external bool isAudioOnly();
   external bool isBuffering();
@@ -85,24 +78,30 @@ class Player {
   external bool isTextTrackVisible();
   external String keySystem();
   external Future<void> load(String assetUri,
-      [double startTile, String mimeType]);
+      [num? startTile, String? mimeType]);
   external void resetConfiguration();
-  external bool retryStreaming([int retryDelaySeconds]);
-  external Map<String, int> seekRange();
+  external bool retryStreaming([num retryDelaySeconds]);
+  external Map<String, num> seekRange();
   external void selectAudioLanguage(String language,
-      [String role, int channelsCount, int safeMargin]);
+      [String role, num channelsCount, num safeMargin]);
   external void selectTextLanguage(String language, [String role, bool forced]);
-  external void selectTextTrack(
-      dynamic language); //TODO: implement shaka.extern.Track
+  external void selectTextTrack(extern.Track language);
   external void selectVariantsByLabel(String label,
-      [bool clearBuffer, int safeMargin]);
-  external void selectVariantTrack(dynamic track,
-      [bool clearBuffer, int safeMargin]); //TODO: implement shaka.extern.Track
-  external void setMaxHardwareResolution(int width, int height);
+      [bool clearBuffer, num safeMargin]);
+  external void selectVariantTrack(extern.Track track,
+      [bool clearBuffer, num safeMargin]);
+  external void setMaxHardwareResolution(num width, num height);
   external void setTextTrackVisibility(bool isVisible);
   external void setVideoContainer(Element videoContainer);
-  external void trickPlay(double rate);
-  external Future unload([bool initializeMediaSource]);
-  external void updateStartTime(double startTime);
+  external void trickPlay(num rate);
+  external JSPromise unload([bool? initializeMediaSource]);
+  Future unloadFuture([bool? initializeMediaSource]) {
+    return promiseToFuture(unload(initializeMediaSource));
+  }
+
+  external void updateStartTime(num startTime);
   external void addEventListener(String event, Function callback);
 }
+
+// final sd = promiseToFuture();
+// final sds = promiseToFutureAsMap();

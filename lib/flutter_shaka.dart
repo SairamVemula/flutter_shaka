@@ -2,7 +2,7 @@
 library shaka;
 
 // ignore: depend_on_referenced_packages
-import 'package:js/js.dart';
+import 'dart:js_interop';
 
 // import 'net/net.dart' as net_alias;
 

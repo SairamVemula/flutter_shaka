@@ -1,7 +1,7 @@
 @JS('shaka.ui')
 library shaka.ui;
 
-import 'package:js/js.dart';
+import 'dart:js_interop';
 
 export 'controls.dart';
 export 'resolution_selction.dart';

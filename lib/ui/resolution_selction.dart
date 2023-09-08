@@ -3,7 +3,7 @@ library shaka.ui;
 
 import 'dart:html';
 
-import 'package:js/js.dart';
+import 'dart:js_interop';
 import 'package:flutter_shaka/ui/ui.dart';
 
 @JS('ResolutionSelection')

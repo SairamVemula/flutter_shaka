@@ -1,70 +1,46 @@
 @JS('shaka.extern')
 library shaka.extern;
 
-// ignore: depend_on_referenced_packages
-import 'package:js/js.dart';
-import 'dart:js';
-import 'dart:typed_data';
-import 'dart:html' as html;
+import 'dart:js_interop';
 
-/// https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.Request
-@JS('Request')
-class Request {
-  external List<String> uris;
-  external String method;
-  external Uint8List body;
-  external JsObject headers;
-  external bool allowCrossSiteCredentials;
-  external String? licenseRequestType;
-  external String? sessionId;
-  external String? initDataType;
-  external Uint8List initData;
-}
+export 'abr_configuration.dart';
+export 'abr_managar.dart';
+export 'buffer_info.dart';
+export 'ads_configuration.dart';
+export 'advanced_abr_configuration.dart';
+export 'buffered_range.dart';
+export 'chapter.dart';
+export 'cmcd_configuration.dart';
+export 'dash_manifest_configuration.dart';
+export 'drm_configuration.dart';
+export 'drm_info.dart';
+export 'drm_support_type.dart';
+// export 'fetch_crypto_keys_function.dart';
+export 'hls_aes128_key.dart';
+export 'hls_manifest_configuration.dart';
+export 'init_data_override.dart';
+export 'init_data_transform.dart';
+export 'drm_session_metadata.dart';
+export 'language_role.dart';
+export 'lcevc_configuration.dart';
+export 'manifest_configuration.dart';
+export 'manifest_parser.dart';
+export 'manifest.dart';
+export 'media_source_configuration.dart';
+export 'mss_manifest_configuration.dart';
+export 'offline_configuration.dart';
+export 'play_configuration.dart';
+export 'request.dart';
+export 'response.dart';
+export 'restriction.dart';
+export 'retry_parameters.dart';
+export 'stats.dart';
+export 'stream.dart';
+export 'streaming_configuration.dart';
+export 'support_type.dart';
+export 'text_displayer.dart';
+export 'thumbnail.dart';
+export 'track.dart';
+export 'ui_configuration.dart';
 
-/// https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.Response
-@JS('Response')
-class Response {
-  external String uri;
-  external String originalUri;
-  external Uint8List data;
-  external JsObject headers;
-  external bool status;
-  external int? timeMs;
-  external bool? fromCache;
-}
-
-@JS('UIConfiguration')
-class UIConfiguration {
-  external List<String> controlPanelElements;
-  external List<String> overflowMenuButtons;
-  external List<String> contextMenuElements;
-  external List<String> statisticsList;
-  external List<double> playbackRates;
-  external List<double> fastForwardRates;
-  external List<double> rewindRates;
-  external bool addSeekBar;
-  external bool addBigPlayButton;
-  external bool customContextMenu;
-  external String castReceiverAppId;
-  external bool castAndroidReceiverCompatible;
-  external bool clearBufferOnQualityChange;
-  external bool showUnbufferedStart;
-  external dynamic
-      seekBarColors; //TODO: implement this shaka.extern.UISeekBarColors
-  external dynamic
-      volumeBarColors; //TODO: implement this shaka.extern.UIVolumeBarColors
-  external dynamic
-      trackLabelFormat; //TODO: implement this shaka.ui.Overlay.TrackLabelFormat
-  external double fadeDelay;
-  external bool doubleClickForFullscreen;
-  external bool singleClickForPlayAndPause;
-  external bool enableKeyboardPlaybackControls;
-  external bool enableFullscreenOnRotation;
-  external bool forceLandscapeOnFullscreen;
-  external bool enableTooltips;
-  external double keyboardSeekDistance;
-  external double keyboardLargeSeekDistance;
-  external html.Element fullScreenElement;
-}
-
-typedef RequestFilter = void Function(int requestType, Request request);
+// typedef RequestFilter = void Function(int requestType, Request request);
