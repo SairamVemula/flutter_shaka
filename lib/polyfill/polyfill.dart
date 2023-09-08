@@ -2,7 +2,6 @@
 library shaka.polyfill;
 
 import 'dart:js';
-import 'dart:typed_data';
 
 // ignore: depend_on_referenced_packages
 import 'dart:js_interop';
