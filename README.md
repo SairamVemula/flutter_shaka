@@ -1,39 +1,14 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Shaka Player for Flutter
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+![Flutter](https://img.shields.io/badge/Flutter-%5E2.0.0-blue.svg)
+![Dart](https://img.shields.io/badge/Dart-%5E2.12.0-blue.svg)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+**Shaka Player for Flutter** is a Flutter package that brings the power of the Shaka Player to your Flutter applications. Shaka Player is a JavaScript library for adaptive media streaming that supports the latest web standards for media playback.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Installation
 
-## Features
+Add this to your `pubspec.yaml`:
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```yaml
+dependencies:
+  shaka_player_flutter: ^0.1.0
