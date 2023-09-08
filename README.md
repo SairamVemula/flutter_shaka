@@ -11,4 +11,4 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  shaka_player_flutter: ^0.1.0
+  flutter_shaka: ^0.0.1
