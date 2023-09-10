@@ -4,4 +4,4 @@
 
 ## 0.0.2
 
-- Issus with dart:js_interop replaced withpackage:js/js.dart
+- Issus with dart:js_interop replaced with package:js/js.dart
