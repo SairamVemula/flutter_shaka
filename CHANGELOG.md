@@ -1,6 +1,6 @@
 ## 0.0.1
 
-- Initial version.
+- Initial version with most of Player and extern
 
 ## 0.0.2
 
