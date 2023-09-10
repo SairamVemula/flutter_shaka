@@ -4,7 +4,6 @@ library shaka.extern;
 // ignore: depend_on_referenced_packages
 import 'dart:js';
 
-import 'dart:js_interop';
 import 'package:js/js.dart';
 
 /// https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.Track
