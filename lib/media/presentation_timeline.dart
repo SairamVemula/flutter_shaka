@@ -2,7 +2,7 @@
 library shaka.media;
 
 import 'dart:js';
-import 'dart:js_interop';
+import 'package:js/js.dart';
 
 import '../media/media.dart' as media;
 

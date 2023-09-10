@@ -2,7 +2,7 @@
 library shaka.dash;
 
 // ignore: depend_on_referenced_packages
-import 'dart:js_interop';
+import 'package:js/js.dart';
 
 @JS('DashParser')
 class DashParser {

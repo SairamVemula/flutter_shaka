@@ -4,7 +4,7 @@ library shaka.polyfill;
 import 'dart:js';
 
 // ignore: depend_on_referenced_packages
-import 'dart:js_interop';
+import 'package:js/js.dart';
 
 bool get isLoaded => context.hasProperty('shaka');
 bool get isNotLoaded => !isLoaded;

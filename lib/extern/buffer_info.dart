@@ -2,7 +2,7 @@
 library shaka.extern;
 
 import 'dart:js';
-import 'dart:js_interop';
+import 'package:js/js.dart';
 
 import 'buffered_range.dart';
 

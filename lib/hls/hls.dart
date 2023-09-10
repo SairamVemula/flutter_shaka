@@ -2,7 +2,7 @@
 library shaka.hls;
 
 // ignore: depend_on_referenced_packages
-import 'dart:js_interop';
+import 'package:js/js.dart';
 
 @JS('HlsParser')
 class HlsParser {

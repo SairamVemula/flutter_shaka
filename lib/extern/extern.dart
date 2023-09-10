@@ -1,7 +1,7 @@
 @JS('shaka.extern')
 library shaka.extern;
 
-import 'dart:js_interop';
+import 'package:js/js.dart';
 
 export 'abr_configuration.dart';
 export 'abr_managar.dart';

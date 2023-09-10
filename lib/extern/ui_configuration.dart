@@ -2,7 +2,7 @@
 library shaka.extern;
 
 // ignore: depend_on_referenced_packages
-import 'dart:js_interop';
+import 'package:js/js.dart';
 import 'dart:js';
 import 'dart:html';
 

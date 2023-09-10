@@ -4,7 +4,7 @@
 library shaka.media;
 
 import 'dart:js';
-import 'dart:js_interop';
+import 'package:js/js.dart';
 
 import 'init_segment_reference.dart';
 import '../extern/extern.dart' as extern;

@@ -4,6 +4,8 @@ library shaka.util;
 // ignore: depend_on_referenced_packages
 import 'dart:js_interop';
 
+import 'package:js/js.dart';
+
 @JS('FairPlayUtils')
 class FairPlayUtils {
   external static initDataTransform(

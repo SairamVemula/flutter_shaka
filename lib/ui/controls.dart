@@ -4,7 +4,7 @@ library shaka.ui;
 import 'dart:html';
 import 'dart:js';
 
-import 'dart:js_interop';
+import 'package:js/js.dart';
 
 import '../extern/extern.dart' as extern;
 import '../player.dart' as shaka;

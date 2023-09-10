@@ -5,8 +5,9 @@ library shaka;
 
 // ignore: depend_on_referenced_packages
 import 'dart:js';
-
 import 'dart:js_interop';
+
+import 'package:js/js.dart';
 import 'dart:html';
 
 import 'extern/extern.dart' as extern;
@@ -26,39 +27,23 @@ class Player {
   external void setAdManagerFactory(
       JsFunction factory); //TODO: implement  shaka.extern.IAdManager.Factory
   @JS('addChaptersTrack')
-  external JSPromise _addChaptersTrack(String uri, String language,
+  external JSPromise addChaptersTrack(String uri, String language,
       [String? mimeType]);
-  Future<extern.Track> addChaptersTrack(String uri, String language,
-          [String? mimeType]) =>
-      _addChaptersTrack(uri, language, mimeType).toDart as Future<extern.Track>;
   @JS('addTextTrackAsync')
-  external JSPromise _addTextTrackAsync(
-      String uri, String language, String kind,
+  external JSPromise addTextTrackAsync(String uri, String language, String kind,
       [bool? mimeType, bool? codec, bool? label, bool? forced]);
-  Future<extern.Track> addTextTrackAsync(
-          String uri, String language, String kind,
-          [bool? mimeType, bool? codec, bool? label, bool? forced]) =>
-      _addTextTrackAsync(uri, language, kind, mimeType, codec, label, forced)
-          .toDart as Future<extern.Track>;
   @JS('addThumbnailsTrack')
-  external JSPromise _addThumbnailsTrack(String uri, [String? mimeType]);
-  Future<extern.Track> addThumbnailsTrack(String uri, [String? mimeType]) =>
-      _addThumbnailsTrack(uri, mimeType).toDart as Future<extern.Track>;
+  external JSPromise addThumbnailsTrack(String uri, [String? mimeType]);
   @JS('attach')
-  external JSPromise _attach(MediaElement mediaElementnon,
+  external JSPromise attach(MediaElement mediaElementnon,
       [bool? initializeMediaSource]);
-  Future<void> attach(MediaElement mediaElementnon,
-          [bool? initializeMediaSource]) =>
-      _attach(mediaElementnon, initializeMediaSource).toDart;
   external void attachCanvas(CanvasElement canvas);
   external void cancelTrickPlay();
   external bool configure(dynamic config, [dynamic value]);
   @JS('destroy')
-  external JSPromise _destroy();
-  Future<void> destroy() => _destroy().toDart;
+  external JSPromise destroy();
   @JS('detach')
-  external JSPromise _detach();
-  Future<void> detach() => _detach().toDart;
+  external JSPromise detach();
   external extern.DrmInfo drmInfo();
   external JsArray<extern.DrmSessionMetadata> getActiveSessionsMetadata();
   external dynamic getAdManager(); //TODO: implement shaka.extern.IAdManager
@@ -89,10 +74,8 @@ class Player {
   external JsArray<extern.LanguageRole> getTextLanguagesAndRoles();
   external JsArray<extern.Track> getTextTracks();
   @JS('getThumbnails')
-  external JSPromise _getThumbnails(num trackId, num time);
-  Future<extern.Thumbnail?> getThumbnails(num trackId, num time) =>
-      _getThumbnails(trackId, time).toDart as Future<extern.Thumbnail?>;
-  external JsArray<extern.Track> getVariantTracks();
+  external JSPromise getThumbnails(num trackId, num time);
+  external JsArray<JSObject> getVariantTracks();
   external void goToLive();
   external bool isAudioOnly();
   external bool isBuffering();
@@ -101,9 +84,7 @@ class Player {
   external bool isTextTrackVisible();
   external String keySystem();
   @JS('load')
-  external JSPromise _load(String assetUri, [num? startTile, String? mimeType]);
-  Future<void> load(String assetUri, [num? startTile, String? mimeType]) =>
-      _load(assetUri, startTile, mimeType).toDart;
+  external JSPromise load(String assetUri, [num? startTile, String? mimeType]);
   external void resetConfiguration();
   external bool retryStreaming([num? retryDelaySeconds]);
   external Map<String, num> seekRange();
@@ -122,13 +103,48 @@ class Player {
   external void trickPlay(num rate);
 
   @JS('unload')
-  external JSPromise _unload([bool? initializeMediaSource]);
-  Future unload([bool? initializeMediaSource]) =>
-      _unload(initializeMediaSource).toDart;
+  external JSPromise unload([bool? initializeMediaSource]);
 
   external void updateStartTime(num startTime);
   external void addEventListener(String event, Function callback);
 }
+
+// class Player extends PlayerJS {
+//   Player(super.element);
+//   @override
+//   Future<extern.Track> addChaptersTrack(String uri, String language,
+//           [String? mimeType]) =>
+//       super.addChaptersTrack(uri, language, mimeType).toDart
+//           as Future<extern.Track>;
+//   @override
+//   Future<extern.Track> addTextTrackAsync(
+//           String uri, String language, String kind,
+//           [bool? mimeType, bool? codec, bool? label, bool? forced]) =>
+//       super
+//           .addTextTrackAsync(
+//               uri, language, kind, mimeType, codec, label, forced)
+//           .toDart as Future<extern.Track>;
+//   @override
+//   Future<extern.Track> addThumbnailsTrack(String uri, [String? mimeType]) =>
+//       super.addThumbnailsTrack(uri, mimeType).toDart as Future<extern.Track>;
+//   @override
+//   Future<void> attach(MediaElement mediaElementnon,
+//           [bool? initializeMediaSource]) =>
+//       super.attach(mediaElementnon, initializeMediaSource).toDart;
+//   @override
+//   Future<void> destroy() => super.destroy().toDart;
+//   @override
+//   Future<void> detach() => super.detach().toDart;
+//   @override
+//   Future<extern.Thumbnail?> getThumbnails(num trackId, num time) =>
+//       super.getThumbnails(trackId, time).toDart as Future<extern.Thumbnail?>;
+//   @override
+//   Future<void> load(String assetUri, [num? startTile, String? mimeType]) =>
+//       super.load(assetUri, startTile, mimeType).toDart;
+//   @override
+//   Future unload([bool? initializeMediaSource]) =>
+//       super.unload(initializeMediaSource).toDart;
+// }
 
 // final sd = promiseToFuture();
 // final sds = promiseToFutureAsMap();

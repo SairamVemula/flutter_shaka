@@ -1,7 +1,7 @@
 @JS('shaka.media')
 library shaka.media;
 
-import 'dart:js_interop';
+import 'package:js/js.dart';
 
 export 'init_segment_reference.dart';
 export 'presentation_timeline.dart';

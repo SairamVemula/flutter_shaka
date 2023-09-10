@@ -3,6 +3,8 @@ library shaka.extern;
 
 import 'dart:js_interop';
 
+import 'package:js/js.dart';
+
 import 'extern.dart';
 
 /// https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.StreamingConfiguration

@@ -1,8 +1,9 @@
 @JS('shaka.extern')
 library shaka.extern;
 
-import 'dart:js';
 import 'dart:js_interop';
+import 'dart:js';
+import 'package:js/js.dart';
 
 /// https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.DashManifestConfiguration
 @JS('DashManifestConfiguration')
