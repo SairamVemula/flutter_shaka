@@ -4,8 +4,10 @@ library shaka.extern;
 import 'dart:convert';
 // ignore: depend_on_referenced_packages
 import 'dart:js';
+import 'dart:js_interop';
 
 import 'package:js/js.dart';
+import 'package:js/js_util.dart';
 
 /// https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.Track
 // @JS('Track')
@@ -471,4 +473,6 @@ class Track {
   String toString() {
     return 'Track(id: $id, active: $active, type: $type, bandwidth: $bandwidth, language: $language, label: $label, kind: $kind, width: $width, height: $height, frameRate: $frameRate, pixelAspectRatio: $pixelAspectRatio, hdr: $hdr, mimeType: $mimeType, audioMimeType: $audioMimeType, videoMimeType: $videoMimeType, codecs: $codecs, audioCodec: $audioCodec, videoCodec: $videoCodec, primary: $primary, roles: $roles, audioRoles: $audioRoles, accessibilityPurpose: $accessibilityPurpose, forced: $forced, videoId: $videoId, audioId: $audioId, channelsCount: $channelsCount, audioSamplingRate: $audioSamplingRate, tilesLayout: $tilesLayout, spatialAudio: $spatialAudio, audioBandwidth: $audioBandwidth, videoBandwidth: $videoBandwidth, originalVideoId: $originalVideoId, originalAudioId: $originalAudioId, originalTextId: $originalTextId, originalImageId: $originalImageId, originalLanguage: $originalLanguage)';
   }
+
+  get toJS => jsify(this);
 }

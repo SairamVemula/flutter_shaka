@@ -112,7 +112,7 @@ class Player {
       _player.selectVariantsByLabel(label, clearBuffer, safeMargin);
   void selectVariantTrack(extern.Track track,
           [bool? clearBuffer, num? safeMargin]) =>
-      _player.selectVariantTrack(track, clearBuffer, safeMargin);
+      _player.selectVariantTrack(track.toJS, clearBuffer, safeMargin);
   void setMaxHardwareResolution(num width, num height) =>
       _player.setMaxHardwareResolution(width, height);
   void setTextTrackVisibility(bool isVisible) =>
