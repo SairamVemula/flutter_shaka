@@ -14,7 +14,7 @@ import 'extern/extern.dart' as extern;
 import 'net/net.dart';
 
 class Player {
-  PlayerJS _player;
+  final PlayerJS _player;
   Player(MediaElement element, [Function? dependencyInjector])
       : _player = PlayerJS(element, dependencyInjector);
   static num get LoadMode => PlayerJS.LoadMode;

@@ -158,6 +158,144 @@ class Track {
     this.originalLanguage,
   });
 
+  factory Track.fromJson(String source) => Track.fromMap(json.decode(source));
+
+  factory Track.fromMap(Map<String, dynamic> map) {
+    return Track(
+      id: (map['id']),
+      active: (map['active']),
+      type: (map['type']),
+      bandwidth: (map['bandwidth']),
+      language: (map['language']),
+      label: map['label'] != null ? (map['label']) : null,
+      kind: map['kind'] != null ? (map['kind']) : null,
+      width: map['width'] != null ? (map['width']) : null,
+      frameRate: (map['frameRate']),
+      height: map['height'],
+      pixelAspectRatio:
+          map['pixelAspectRatio'] != null ? (map['pixelAspectRatio']) : null,
+      hdr: map['hdr'] != null ? (map['hdr']) : null,
+      mimeType: map['mimeType'] != null ? (map['mimeType']) : null,
+      audioMimeType:
+          map['audioMimeType'] != null ? (map['audioMimeType']) : null,
+      videoMimeType:
+          map['videoMimeType'] != null ? (map['videoMimeType']) : null,
+      codecs: map['codecs'] != null ? (map['codecs']) : null,
+      audioCodec: map['audioCodec'] != null ? (map['audioCodec']) : null,
+      videoCodec: map['videoCodec'] != null ? (map['videoCodec']) : null,
+      primary: (map['primary']),
+      roles: (map['roles']),
+      audioRoles: (map['audioRoles']),
+      accessibilityPurpose: map['accessibilityPurpose'],
+      forced: (map['forced']),
+      videoId: map['videoId'] != null ? (map['videoId']) : null,
+      audioId: map['audioId'] != null ? (map['audioId']) : null,
+      channelsCount:
+          map['channelsCount'] != null ? (map['channelsCount']) : null,
+      audioSamplingRate:
+          map['audioSamplingRate'] != null ? (map['audioSamplingRate']) : null,
+      tilesLayout: map['tilesLayout'] != null ? (map['tilesLayout']) : null,
+      spatialAudio: (map['spatialAudio']),
+      audioBandwidth:
+          map['audioBandwidth'] != null ? (map['audioBandwidth']) : null,
+      videoBandwidth:
+          map['videoBandwidth'] != null ? (map['videoBandwidth']) : null,
+      originalVideoId:
+          map['originalVideoId'] != null ? (map['originalVideoId']) : null,
+      originalAudioId:
+          map['originalAudioId'] != null ? (map['originalAudioId']) : null,
+      originalTextId:
+          map['originalTextId'] != null ? (map['originalTextId']) : null,
+      originalImageId:
+          map['originalImageId'] != null ? (map['originalImageId']) : null,
+      originalLanguage:
+          map['originalLanguage'] != null ? (map['originalLanguage']) : null,
+    );
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^
+        active.hashCode ^
+        type.hashCode ^
+        bandwidth.hashCode ^
+        language.hashCode ^
+        label.hashCode ^
+        kind.hashCode ^
+        width.hashCode ^
+        height.hashCode ^
+        frameRate.hashCode ^
+        pixelAspectRatio.hashCode ^
+        hdr.hashCode ^
+        mimeType.hashCode ^
+        audioMimeType.hashCode ^
+        videoMimeType.hashCode ^
+        codecs.hashCode ^
+        audioCodec.hashCode ^
+        videoCodec.hashCode ^
+        primary.hashCode ^
+        roles.hashCode ^
+        audioRoles.hashCode ^
+        accessibilityPurpose.hashCode ^
+        forced.hashCode ^
+        videoId.hashCode ^
+        audioId.hashCode ^
+        channelsCount.hashCode ^
+        audioSamplingRate.hashCode ^
+        tilesLayout.hashCode ^
+        spatialAudio.hashCode ^
+        audioBandwidth.hashCode ^
+        videoBandwidth.hashCode ^
+        originalVideoId.hashCode ^
+        originalAudioId.hashCode ^
+        originalTextId.hashCode ^
+        originalImageId.hashCode ^
+        originalLanguage.hashCode;
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is Track &&
+        other.id == id &&
+        other.active == active &&
+        other.type == type &&
+        other.bandwidth == bandwidth &&
+        other.language == language &&
+        other.label == label &&
+        other.kind == kind &&
+        other.width == width &&
+        other.height == height &&
+        other.frameRate == frameRate &&
+        other.pixelAspectRatio == pixelAspectRatio &&
+        other.hdr == hdr &&
+        other.mimeType == mimeType &&
+        other.audioMimeType == audioMimeType &&
+        other.videoMimeType == videoMimeType &&
+        other.codecs == codecs &&
+        other.audioCodec == audioCodec &&
+        other.videoCodec == videoCodec &&
+        other.primary == primary &&
+        other.roles == roles &&
+        other.audioRoles == audioRoles &&
+        other.accessibilityPurpose == accessibilityPurpose &&
+        other.forced == forced &&
+        other.videoId == videoId &&
+        other.audioId == audioId &&
+        other.channelsCount == channelsCount &&
+        other.audioSamplingRate == audioSamplingRate &&
+        other.tilesLayout == tilesLayout &&
+        other.spatialAudio == spatialAudio &&
+        other.audioBandwidth == audioBandwidth &&
+        other.videoBandwidth == videoBandwidth &&
+        other.originalVideoId == originalVideoId &&
+        other.originalAudioId == originalAudioId &&
+        other.originalTextId == originalTextId &&
+        other.originalImageId == originalImageId &&
+        other.originalLanguage == originalLanguage;
+  }
+
   Track copyWith({
     num? id,
     bool? active,
@@ -235,6 +373,8 @@ class Track {
       originalLanguage: originalLanguage ?? this.originalLanguage,
     );
   }
+
+  String toJson() => json.encode(toMap());
 
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{};
@@ -327,148 +467,8 @@ class Track {
     return result;
   }
 
-  factory Track.fromMap(Map<String, dynamic> map) {
-    return Track(
-      id: (map['id']),
-      active: (map['active']),
-      type: (map['type']),
-      bandwidth: (map['bandwidth']),
-      language: (map['language']),
-      label: map['label'] != null ? (map['label']) : null,
-      kind: map['kind'] != null ? (map['kind']) : null,
-      width: map['width'] != null ? (map['width']) : null,
-      frameRate: (map['frameRate']),
-      height: map['height'],
-      pixelAspectRatio:
-          map['pixelAspectRatio'] != null ? (map['pixelAspectRatio']) : null,
-      hdr: map['hdr'] != null ? (map['hdr']) : null,
-      mimeType: map['mimeType'] != null ? (map['mimeType']) : null,
-      audioMimeType:
-          map['audioMimeType'] != null ? (map['audioMimeType']) : null,
-      videoMimeType:
-          map['videoMimeType'] != null ? (map['videoMimeType']) : null,
-      codecs: map['codecs'] != null ? (map['codecs']) : null,
-      audioCodec: map['audioCodec'] != null ? (map['audioCodec']) : null,
-      videoCodec: map['videoCodec'] != null ? (map['videoCodec']) : null,
-      primary: (map['primary']),
-      roles: (map['roles']),
-      audioRoles: (map['audioRoles']),
-      accessibilityPurpose: map['accessibilityPurpose'],
-      forced: (map['forced']),
-      videoId: map['videoId'] != null ? (map['videoId']) : null,
-      audioId: map['audioId'] != null ? (map['audioId']) : null,
-      channelsCount:
-          map['channelsCount'] != null ? (map['channelsCount']) : null,
-      audioSamplingRate:
-          map['audioSamplingRate'] != null ? (map['audioSamplingRate']) : null,
-      tilesLayout: map['tilesLayout'] != null ? (map['tilesLayout']) : null,
-      spatialAudio: (map['spatialAudio']),
-      audioBandwidth:
-          map['audioBandwidth'] != null ? (map['audioBandwidth']) : null,
-      videoBandwidth:
-          map['videoBandwidth'] != null ? (map['videoBandwidth']) : null,
-      originalVideoId:
-          map['originalVideoId'] != null ? (map['originalVideoId']) : null,
-      originalAudioId:
-          map['originalAudioId'] != null ? (map['originalAudioId']) : null,
-      originalTextId:
-          map['originalTextId'] != null ? (map['originalTextId']) : null,
-      originalImageId:
-          map['originalImageId'] != null ? (map['originalImageId']) : null,
-      originalLanguage:
-          map['originalLanguage'] != null ? (map['originalLanguage']) : null,
-    );
-  }
-
-  String toJson() => json.encode(toMap());
-
-  factory Track.fromJson(String source) => Track.fromMap(json.decode(source));
-
   @override
   String toString() {
     return 'Track(id: $id, active: $active, type: $type, bandwidth: $bandwidth, language: $language, label: $label, kind: $kind, width: $width, height: $height, frameRate: $frameRate, pixelAspectRatio: $pixelAspectRatio, hdr: $hdr, mimeType: $mimeType, audioMimeType: $audioMimeType, videoMimeType: $videoMimeType, codecs: $codecs, audioCodec: $audioCodec, videoCodec: $videoCodec, primary: $primary, roles: $roles, audioRoles: $audioRoles, accessibilityPurpose: $accessibilityPurpose, forced: $forced, videoId: $videoId, audioId: $audioId, channelsCount: $channelsCount, audioSamplingRate: $audioSamplingRate, tilesLayout: $tilesLayout, spatialAudio: $spatialAudio, audioBandwidth: $audioBandwidth, videoBandwidth: $videoBandwidth, originalVideoId: $originalVideoId, originalAudioId: $originalAudioId, originalTextId: $originalTextId, originalImageId: $originalImageId, originalLanguage: $originalLanguage)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is Track &&
-        other.id == id &&
-        other.active == active &&
-        other.type == type &&
-        other.bandwidth == bandwidth &&
-        other.language == language &&
-        other.label == label &&
-        other.kind == kind &&
-        other.width == width &&
-        other.height == height &&
-        other.frameRate == frameRate &&
-        other.pixelAspectRatio == pixelAspectRatio &&
-        other.hdr == hdr &&
-        other.mimeType == mimeType &&
-        other.audioMimeType == audioMimeType &&
-        other.videoMimeType == videoMimeType &&
-        other.codecs == codecs &&
-        other.audioCodec == audioCodec &&
-        other.videoCodec == videoCodec &&
-        other.primary == primary &&
-        other.roles == roles &&
-        other.audioRoles == audioRoles &&
-        other.accessibilityPurpose == accessibilityPurpose &&
-        other.forced == forced &&
-        other.videoId == videoId &&
-        other.audioId == audioId &&
-        other.channelsCount == channelsCount &&
-        other.audioSamplingRate == audioSamplingRate &&
-        other.tilesLayout == tilesLayout &&
-        other.spatialAudio == spatialAudio &&
-        other.audioBandwidth == audioBandwidth &&
-        other.videoBandwidth == videoBandwidth &&
-        other.originalVideoId == originalVideoId &&
-        other.originalAudioId == originalAudioId &&
-        other.originalTextId == originalTextId &&
-        other.originalImageId == originalImageId &&
-        other.originalLanguage == originalLanguage;
-  }
-
-  @override
-  int get hashCode {
-    return id.hashCode ^
-        active.hashCode ^
-        type.hashCode ^
-        bandwidth.hashCode ^
-        language.hashCode ^
-        label.hashCode ^
-        kind.hashCode ^
-        width.hashCode ^
-        height.hashCode ^
-        frameRate.hashCode ^
-        pixelAspectRatio.hashCode ^
-        hdr.hashCode ^
-        mimeType.hashCode ^
-        audioMimeType.hashCode ^
-        videoMimeType.hashCode ^
-        codecs.hashCode ^
-        audioCodec.hashCode ^
-        videoCodec.hashCode ^
-        primary.hashCode ^
-        roles.hashCode ^
-        audioRoles.hashCode ^
-        accessibilityPurpose.hashCode ^
-        forced.hashCode ^
-        videoId.hashCode ^
-        audioId.hashCode ^
-        channelsCount.hashCode ^
-        audioSamplingRate.hashCode ^
-        tilesLayout.hashCode ^
-        spatialAudio.hashCode ^
-        audioBandwidth.hashCode ^
-        videoBandwidth.hashCode ^
-        originalVideoId.hashCode ^
-        originalAudioId.hashCode ^
-        originalTextId.hashCode ^
-        originalImageId.hashCode ^
-        originalLanguage.hashCode;
   }
 }
