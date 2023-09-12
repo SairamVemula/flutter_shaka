@@ -7,11 +7,11 @@ import 'dart:js';
 import 'package:js/js.dart';
 
 import '../extern/extern.dart' as extern;
-import '../player.dart' as shaka;
+import '../player_js.dart' as shaka;
 
 @JS('Controls')
 class Controls {
-  external Controls(shaka.Player player, Element videoContainer,
+  external Controls(shaka.PlayerJS player, Element videoContainer,
       MediaElement video, extern.UIConfiguration config);
 
   /// factory is JsFunction of shaka.extern.IUISeekBar.Factory;
@@ -31,9 +31,9 @@ class Controls {
   external Element getControlsContainer();
   external num getDisplayTime();
   external void getLocalization(); //TODO: implement shaka.ui.Localization
-  external shaka.Player getLocalPlayer();
+  external shaka.PlayerJS getLocalPlayer();
   external MediaElement getLocalVideo();
-  external shaka.Player getPlayer();
+  external shaka.PlayerJS getPlayer();
   external Element getServerSideAdContainer();
   external MediaElement getVideo();
   external Element getVideoContainer();

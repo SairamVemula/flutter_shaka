@@ -1,15 +1,17 @@
-@JS('shaka.hls')
 library shaka.hls;
 
-// ignore: depend_on_referenced_packages
-import 'package:js/js.dart';
+import 'dart:js_interop';
 
-@JS('HlsParser')
+import 'package:flutter_shaka/hls/hls_js.dart';
+
 class HlsParser {
-  external HlsParser();
-  external void configure(config);
-  external void onExpirationUpdated(String sessionId, num expiration);
-  external Future start(uri, playerInterface);
-  external Future stop();
-  external void update();
+  HlsParserJS _hlsParser;
+  HlsParser() : _hlsParser = HlsParserJS();
+  void configure(config) => _hlsParser.configure(config);
+  void onExpirationUpdated(String sessionId, num expiration) =>
+      _hlsParser.onExpirationUpdated(sessionId, expiration);
+  Future start(uri, playerInterface) =>
+      _hlsParser.start(uri, playerInterface).toDart;
+  Future stop() => _hlsParser.stop().toDart;
+  void update() => _hlsParser.update();
 }
