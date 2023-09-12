@@ -356,7 +356,7 @@ class Track {
       primary: primary ?? this.primary,
       roles: roles ?? this.roles,
       audioRoles: audioRoles ?? this.audioRoles,
-      accessibilityPurpose: accessibilityPurpose ?? this.accessibilityPurpose,
+      accessibilityPurpose: accessibilityPurpose,
       forced: forced ?? this.forced,
       videoId: videoId ?? this.videoId,
       audioId: audioId ?? this.audioId,
