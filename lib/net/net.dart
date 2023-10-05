@@ -1,51 +1,43 @@
-// ignore_for_file: constant_identifier_names
-@JS('shaka.net')
 library shaka.net;
 
-// ignore: depend_on_referenced_packages
-import 'package:js/js.dart';
+import 'net_js.dart';
 
-@JS('NetworkingEngine')
 class NetworkingEngine {
-  external void defaultRetryParameters();
-  external void makeRequest();
-  external void registerScheme();
-  external void unregisterScheme();
-  external void clearAllRequestFilters();
-  external void clearAllResponseFilters();
-  external void destroy();
-  external void registerRequestFilter(filter);
-  external void registerResponseFilter(filter);
-}
+  final NetworkingEngineJS _networkEngine;
+  NetworkingEngine(networkEngine) : _networkEngine = networkEngine;
+  void defaultRetryParameters() {
+    return _networkEngine.defaultRetryParameters();
+  }
 
-class RequestType {
-  static const MANIFEST = 0;
-  static const SEGMENT = 1;
-  static const LICENSE = 2;
-  static const APP = 3;
-  static const TIMING = 4;
-  static const SERVER_CERTIFICATE = 5;
-  static const KEY = 5;
-}
+  void makeRequest() {
+    return _networkEngine.makeRequest();
+  }
 
-class AdvancedRequestType {
-  static const INIT_SEGMENT = 0;
-  static const MEDIA_SEGMENT = 1;
-  static const MEDIA_PLAYLIST = 2;
-  static const MASTER_PLAYLIST = 3;
-  static const MPD = 4;
-  static const MSS = 5;
-}
+  void registerScheme() {
+    return _networkEngine.registerScheme();
+  }
 
-class PluginPriority {
-  static const FALLBACK = 1;
-  static const PREFERRED = 2;
-  static const APPLICATION = 3;
-}
-/*
-extension NetworkingEngineExt on NetworkingEngine {
-  void registerRequestFilter(RequestFilter filter) {
-    privateRegisterRequestFilter(allowInterop(filter));
+  void unregisterScheme() {
+    return _networkEngine.unregisterScheme();
+  }
+
+  void clearAllRequestFilters() {
+    return _networkEngine.clearAllRequestFilters();
+  }
+
+  void clearAllResponseFilters() {
+    return _networkEngine.clearAllResponseFilters();
+  }
+
+  void destroy() {
+    return _networkEngine.destroy();
+  }
+
+  void registerRequestFilter(Function func) {
+    _networkEngine.registerRequestFilter(func);
+  }
+
+  void registerResponseFilter(Function func) {
+    _networkEngine.registerResponseFilter(func);
   }
 }
-*/

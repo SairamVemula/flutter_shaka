@@ -2,6 +2,7 @@
 library shaka.extern;
 
 import 'dart:convert';
+import 'dart:developer';
 // ignore: depend_on_referenced_packages
 import 'dart:js';
 import 'dart:js_interop';
@@ -41,7 +42,7 @@ class Track {
   num? height;
 
   /// The video framerate provided in the manifest, if present.
-  String? frameRate;
+  num? frameRate;
 
   /// The video pixel aspect ratio provided in the manifest, if present.
   String? pixelAspectRatio;
@@ -308,7 +309,7 @@ class Track {
     String? kind,
     num? width,
     num? height,
-    String? frameRate,
+    num? frameRate,
     String? pixelAspectRatio,
     String? hdr,
     String? mimeType,

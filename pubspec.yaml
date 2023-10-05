@@ -1,6 +1,6 @@
 name: flutter_shaka
 description: A Flutter library that wraps Shaka Player for playing adaptive streaming videos in your Flutter applications.
-version: 0.0.3
+version: 0.0.4
 repository: https://github.com/SairamVemula/flutter_shaka.git
 
 environment:

@@ -43,7 +43,7 @@ class Player {
   void attachCanvas(CanvasElement canvas) => _player.attachCanvas(canvas);
   void cancelTrickPlay() => _player.cancelTrickPlay();
   bool configure(dynamic config, [dynamic value]) =>
-      _player.configure(jsify(config), value);
+      _player.configure(jsify(config), jsify(value));
   Future destroy() => _player.destroy().toDart;
   Future detach() => _player.detach().toDart;
   // extern.DrmInfo drmInfo();
@@ -71,7 +71,8 @@ class Player {
   JsFunction getManifestParserFactory() => _player.getManifestParserFactory();
   String getManifestType() => _player.getManifestType();
   MediaElement getMediaElement() => _player.getMediaElement();
-  NetworkingEngine getNetworkingEngine() => _player.getNetworkingEngine();
+  NetworkingEngine getNetworkingEngine() =>
+      NetworkingEngine(_player.getNetworkingEngine());
   num getPlaybackRate() => _player.getPlaybackRate();
   DateTime getPlayheadTimeAsDate() => _player.getPlayheadTimeAsDate();
   DateTime getPresentationStartTimeAsDate() =>
@@ -100,8 +101,8 @@ class Player {
   bool retryStreaming([num? retryDelaySeconds]) =>
       _player.retryStreaming(retryDelaySeconds);
   Map<String, num> seekRange() => _player.seekRange();
-  void selectAudioLanguage(
-          String language, String? role, num? channelsCount, num? safeMargin) =>
+  void selectAudioLanguage(String language,
+          [String? role, num? channelsCount, num? safeMargin]) =>
       _player.selectAudioLanguage(language, role, channelsCount, safeMargin);
   void selectTextLanguage(String language, [String? role, bool? forced]) =>
       _player.selectTextLanguage(language, role, forced);

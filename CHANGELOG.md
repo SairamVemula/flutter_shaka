@@ -9,3 +9,7 @@
 ## 0.0.3
 
 - some improvements
+
+## 0.0.4
+
+- worked on DRM implementation and fixed issues related to it.

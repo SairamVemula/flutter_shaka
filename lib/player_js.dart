@@ -10,7 +10,7 @@ import 'package:js/js.dart';
 import 'dart:html';
 
 import 'extern/extern.dart' as extern;
-import 'net/net.dart';
+import 'net/net_js.dart';
 
 @JS('Player')
 class PlayerJS {
@@ -63,7 +63,7 @@ class PlayerJS {
   external JsFunction getManifestParserFactory();
   external String getManifestType();
   external MediaElement getMediaElement();
-  external NetworkingEngine getNetworkingEngine();
+  external NetworkingEngineJS getNetworkingEngine();
   external num getPlaybackRate();
   external DateTime getPlayheadTimeAsDate();
   external DateTime getPresentationStartTimeAsDate();

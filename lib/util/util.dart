@@ -21,6 +21,7 @@ class StringUtils {
 
 @JS('Uint8ArrayUtils')
 class Uint8ArrayUtils {
+  external static String toBase64(JSUint8Array data);
   external static String toStandardBase64(JSUint8Array data);
   external static JSUint8Array fromBase64(String data);
 }
