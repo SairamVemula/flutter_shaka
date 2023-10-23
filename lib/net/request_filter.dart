@@ -11,6 +11,7 @@ class RequestFilterFunctions {
   @JSExport('requestFilter')
   void requestFilter(String type, dynamic request) {
     print('request filter before license check $type $request');
+    // ignore: non_constant_identifier_names
     final NetworkingEngineRequestType =
         context['shaka']['net']['NetworkingEngine']['RequestType'];
     if (type != NetworkingEngineRequestType['LICENSE']) {
