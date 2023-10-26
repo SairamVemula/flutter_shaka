@@ -11,4 +11,9 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_shaka: ^0.0.3
+  flutter_shaka: ^0.0.4
+```
+
+## Documentation
+
+- [flutter_shaka](https://pub.dev/packages/flutter_shaka) is a wrapper library for google's js lib [shaka_player](https://shaka-player-demo.appspot.com/docs/api/tutorial-welcome.html) our main focus should be on [Player](https://shaka-player-demo.appspot.com/docs/api/shaka.Player.html) part of this library.
