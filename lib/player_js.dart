@@ -43,18 +43,24 @@ class PlayerJS {
   @JS('detach')
   external JSPromise detach();
   external extern.DrmInfo drmInfo();
-  external JsArray<extern.DrmSessionMetadata> getActiveSessionsMetadata();
+  // external JsArray<extern.DrmSessionMetadata> getActiveSessionsMetadata();
+  external JSArray getActiveSessionsMetadata();
   external dynamic getAdManager(); //TODO: implement shaka.extern.IAdManager
   external String getAssetUri();
-  external JsArray<String> getAudioLanguages();
-  external JsArray<extern.LanguageRole> getAudioLanguagesAndRoles();
+  // external JsArray<String> getAudioLanguages();
+  external JSArray getAudioLanguages();
+  // external JsArray<extern.LanguageRole> getAudioLanguagesAndRoles();
+  external JSArray getAudioLanguagesAndRoles();
   external extern.BufferedInfo getBufferedInfo();
   external num getBufferFullness();
-  external JsArray<extern.Chapter> getChapters(String language);
-  external JsArray<extern.Track> getChaptersTracks();
+  // external JsArray<extern.Chapter> getChapters(String language);
+  external JSArray getChapters(String language);
+  // external JsArray<extern.Track> getChaptersTracks();
+  external JSArray getChaptersTracks();
   external extern.PlayerConfiguration getConfiguration();
   external num getExpiration();
-  external JsArray<extern.Track> getImageTracks();
+  // external JsArray<extern.Track> getImageTracks();
+  external JSArray getImageTracks();
   external Map<String, String> getKeyStatuses();
   external num getLoadMode();
   external extern.Manifest getManifest();
@@ -68,12 +74,16 @@ class PlayerJS {
   external DateTime getPlayheadTimeAsDate();
   external DateTime getPresentationStartTimeAsDate();
   external extern.Stats getStats();
-  external JsArray<String> getTextLanguages();
-  external JsArray<extern.LanguageRole> getTextLanguagesAndRoles();
-  external JsArray<extern.Track> getTextTracks();
+  // external JsArray<String> getTextLanguages();
+  external JSArray getTextLanguages();
+  // external JsArray<extern.LanguageRole> getTextLanguagesAndRoles();
+  external JSArray getTextLanguagesAndRoles();
+  // external JsArray<extern.Track> getTextTracks();
+  external JSArray getTextTracks();
   @JS('getThumbnails')
   external JSPromise getThumbnails(num trackId, num time);
-  external JsArray<JsObject> getVariantTracks();
+  // external JsArray<JsObject> getVariantTracks();
+  external JSArray getVariantTracks();
   external void goToLive();
   external bool isAudioOnly();
   external bool isBuffering();

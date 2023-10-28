@@ -48,21 +48,24 @@ class Player {
   Future detach() => _player.detach().toDart;
   // extern.DrmInfo drmInfo();
   List<extern.DrmSessionMetadata> getActiveSessionsMetadata() =>
-      _player.getActiveSessionsMetadata();
+      _player.getActiveSessionsMetadata() as List<extern.DrmSessionMetadata>;
   dynamic getAdManager() =>
       _player.getAdManager(); //TODO: implement shaka.extern.IAdManager
   String getAssetUri() => _player.getAssetUri();
-  List<String> getAudioLanguages() => _player.getAudioLanguages();
+  List<String> getAudioLanguages() =>
+      _player.getAudioLanguages() as List<String>;
   List<extern.LanguageRole> getAudioLanguagesAndRoles() =>
-      _player.getAudioLanguagesAndRoles();
+      _player.getAudioLanguagesAndRoles() as List<extern.LanguageRole>;
   extern.BufferedInfo getBufferedInfo() => _player.getBufferedInfo();
   num getBufferFullness() => _player.getBufferFullness();
   List<extern.Chapter> getChapters(String language) =>
-      _player.getChapters(language);
-  List<extern.Track> getChaptersTracks() => _player.getChaptersTracks();
+      _player.getChapters(language) as List<extern.Chapter>;
+  List<extern.Track> getChaptersTracks() =>
+      _player.getChaptersTracks() as List<extern.Track>;
   extern.PlayerConfiguration getConfiguration() => _player.getConfiguration();
   num getExpiration() => _player.getExpiration();
-  List<extern.Track> getImageTracks() => _player.getImageTracks();
+  List<extern.Track> getImageTracks() =>
+      _player.getImageTracks() as List<extern.Track>;
   Map<String, String> getKeyStatuses() => _player.getKeyStatuses();
   num getLoadMode() => _player.getLoadMode();
   extern.Manifest getManifest() => _player.getManifest();
@@ -78,10 +81,11 @@ class Player {
   DateTime getPresentationStartTimeAsDate() =>
       _player.getPresentationStartTimeAsDate();
   extern.Stats getStats() => _player.getStats();
-  List<String> getTextLanguages() => _player.getTextLanguages();
+  List<String> getTextLanguages() => _player.getTextLanguages() as List<String>;
   List<extern.LanguageRole> getTextLanguagesAndRoles() =>
-      _player.getTextLanguagesAndRoles();
-  List<extern.Track> getTextTracks() => _player.getTextTracks();
+      _player.getTextLanguagesAndRoles() as List<extern.LanguageRole>;
+  List<extern.Track> getTextTracks() =>
+      _player.getTextTracks() as List<extern.Track>;
   Future getThumbnails(num trackId, num time) =>
       _player.getThumbnails(trackId, time).toDart;
   List<extern.Track> getVariantTracks() => _player
@@ -113,7 +117,7 @@ class Player {
       _player.selectVariantsByLabel(label, clearBuffer, safeMargin);
   void selectVariantTrack(extern.Track track,
           [bool? clearBuffer, num? safeMargin]) =>
-      _player.selectVariantTrack(track.toJS, clearBuffer, safeMargin);
+      _player.selectVariantTrack(jsify(track.toMap()), clearBuffer, safeMargin);
   void setMaxHardwareResolution(num width, num height) =>
       _player.setMaxHardwareResolution(width, height);
   void setTextTrackVisibility(bool isVisible) =>
