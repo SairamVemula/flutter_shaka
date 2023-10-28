@@ -13,3 +13,7 @@
 ## 0.0.4
 
 - worked on DRM implementation and fixed issues related to it.
+
+## 0.0.5
+
+- issue with track changes when prod web build is built is resolved.
