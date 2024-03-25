@@ -10,7 +10,7 @@ import 'dart:js';
 /// https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.Request
 @JS('Request')
 class Request {
-  external JsArray<String> uris;
+  external List<String> uris;
   external String method;
   external JSUint8Array body;
   external JsObject headers;

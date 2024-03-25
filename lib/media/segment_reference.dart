@@ -22,7 +22,7 @@ class SegmentReference {
       num timestampOffset,
       num appendWindowStart,
       num appendWindowEnd,
-      [JsArray<SegmentReference> partialReferences,
+      [List<SegmentReference> partialReferences,
       String tilesLayout,
       num tileDuration,
       num syncTime,
@@ -54,7 +54,7 @@ class SegmentReference {
   external String getTilesLayout();
 
   /// Creates and returns the URIs of the resource containing the segment.
-  external JsArray<String> getUris();
+  external List<String> getUris();
 
   /// Returns true if the segment has a byterange optimization.
   external bool hasByterangeOptimization();

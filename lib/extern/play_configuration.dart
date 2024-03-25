@@ -60,10 +60,10 @@ class PlayerConfiguration {
   external String preferredTextRole;
 
   ///	Array.<string>	The list of preferred video codecs, in order of highest to lowest priority.
-  external JsArray<String> preferredVideoCodecs;
+  external List<String> preferredVideoCodecs;
 
   ///	Array.<string>	The list of preferred audio codecs, in order of highest to lowest priority.
-  external JsArray<String> preferredAudioCodecs;
+  external List<String> preferredAudioCodecs;
 
   ///	number	The preferred number of audio channels.
   external num preferredAudioChannelCount;
@@ -72,7 +72,7 @@ class PlayerConfiguration {
   external String preferredVideoHdrLevel;
 
   ///	Array.<string>	The list of preferred attributes of decodingInfo, in the order of their priorities.
-  external JsArray<String> preferredDecodingAttributes;
+  external List<String> preferredDecodingAttributes;
 
   ///	boolean	If true, a forced text track is preferred. Defaults to false. If the content has no forced captions and the value is true, no text track is chosen. Changing this during playback will not affect the current playback.
   external bool preferForcedSubs;

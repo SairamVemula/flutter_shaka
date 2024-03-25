@@ -29,7 +29,7 @@ class DrmConfiguration {
   external bool persistentSessionOnlinePlayback;
 
   ///	Array.<PersistentSessionMetadata>	Persistent sessions metadata to load before starting playback
-  external JsArray persistentSessionsMetadata;
+  external List persistentSessionsMetadata;
 
   ///	Object.<string, shaka.extern.AdvancedDrmConfiguration>	Optional.
   /// A dictionary which maps key system IDs to advanced DRM configuration for those key systems.
@@ -49,7 +49,7 @@ class DrmConfiguration {
 
   ///	Array.<string>	Defaults to an empty array.
   /// Specifies the priorties of available DRM key systems.
-  external JsArray<String> preferredKeySystems;
+  external List<String> preferredKeySystems;
 
   ///	Object.<string, string>	A map of key system name to key system name.
   external JsObject keySystemsMapping;

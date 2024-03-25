@@ -26,19 +26,19 @@ class Manifest {
 
   ///	Array.<shaka.extern.Variant>		Required.
   /// The presentation's Variants. There must be at least one Variant.
-  external JsArray<Variant> variants;
+  external List<Variant> variants;
 
   ///	Array.<shaka.extern.Stream>		Required.
   /// The presentation's text streams.
-  external JsArray<Stream> textStreams;
+  external List<Stream> textStreams;
 
   ///	Array.<shaka.extern.Stream>		Required.
 // The presentation's image streams
-  external JsArray<Stream> imageStreams;
+  external List<Stream> imageStreams;
 
   ///	Array.<string>		Defaults to [].
   /// An array of EME sessions to load for offline playback.
-  external JsArray<String> offlineSessionIds;
+  external List<String> offlineSessionIds;
 
   ///	number		Defaults to 0.
   /// The minimum number of seconds of content that must be buffered before playback can begin. Can be overridden by a higher value from the Player configuration.

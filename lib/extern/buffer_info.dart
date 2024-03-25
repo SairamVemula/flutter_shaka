@@ -10,14 +10,14 @@ import 'buffered_range.dart';
 @JS('BufferedInfo')
 class BufferedInfo {
   /// The combined audio/video buffered ranges, reported by video.buffered.
-  external JsArray<BufferedRange> total;
+  external List<BufferedRange> total;
 
   /// The buffered ranges for audio content.
-  external JsArray<BufferedRange> audio;
+  external List<BufferedRange> audio;
 
   /// The buffered ranges for video content.
-  external JsArray<BufferedRange> video;
+  external List<BufferedRange> video;
 
   /// The buffered ranges for text content.
-  external JsArray<BufferedRange> text;
+  external List<BufferedRange> text;
 }

@@ -45,9 +45,9 @@ class DrmInfo {
 
   /// Array.<!shaka.extern.InitDataOverride>	Defaults to [], e.g., no override.
   /// A list of initialization data which override any initialization data found in the content. See also shaka.extern.InitDataOverride.
-  external JsArray<InitDataOverride> initData;
+  external List<InitDataOverride> initData;
 
   /// Set.<string>	Defaults to the empty Set
   ///  If not empty, contains the default key IDs for this key system, as lowercase hex strings.
-  external JsArray<String> keyIds;
+  external List<String> keyIds;
 }

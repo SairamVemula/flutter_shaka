@@ -2,7 +2,7 @@
 library shaka.extern;
 
 import 'package:js/js.dart';
-//class JsArray<E> extends JsObject with ListMixin<E>
+//class List<E> extends JsObject with ListMixin<E>
 
 import 'dart:js';
 

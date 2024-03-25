@@ -8,13 +8,13 @@ import 'dart:html';
 
 @JS('UIConfiguration')
 class UIConfiguration {
-  external JsArray<String> controlPanelElements;
-  external JsArray<String> overflowMenuButtons;
-  external JsArray<String> contextMenuElements;
-  external JsArray<String> statisticsList;
-  external JsArray<num> playbackRates;
-  external JsArray<num> fastForwardRates;
-  external JsArray<num> rewindRates;
+  external List<String> controlPanelElements;
+  external List<String> overflowMenuButtons;
+  external List<String> contextMenuElements;
+  external List<String> statisticsList;
+  external List<num> playbackRates;
+  external List<num> fastForwardRates;
+  external List<num> rewindRates;
   external bool addSeekBar;
   external bool addBigPlayButton;
   external bool customContextMenu;

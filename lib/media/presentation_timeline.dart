@@ -61,11 +61,11 @@ class PresentationTimeline {
 
   /// Gives PresentationTimeline an array of segments so it can size and position the segment availability window, and account for missing segment information. These segments do not necessarily need to all be from the same stream.
   external void notifySegments(
-      JsArray<media.SegmentReference>
+      List<media.SegmentReference>
           startTime); //TODO: shaka.media.SegmentReference
 
   /// Gives PresentationTimeline a Stream's timeline so it can size and position the segment availability window, and account for missing segment information.
-  external void notifyTimeRange(JsArray<TimeRange> timeline, num startOffset);
+  external void notifyTimeRange(List<TimeRange> timeline, num startOffset);
 
   /// Offsets the segment times by the given amount.
   external void offset(num offset);
