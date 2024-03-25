@@ -3,7 +3,6 @@ library shaka.extern;
 
 import 'dart:convert';
 // ignore: depend_on_referenced_packages
-import 'dart:js';
 
 import 'package:js/js.dart';
 import 'package:js/js_util.dart';

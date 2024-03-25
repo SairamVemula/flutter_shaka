@@ -2,7 +2,6 @@
 library shaka.extern;
 
 import 'dart:js_interop';
-import 'dart:js';
 import 'package:js/js.dart';
 
 import 'init_data_override.dart';

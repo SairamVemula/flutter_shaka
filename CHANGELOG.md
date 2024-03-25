@@ -17,3 +17,7 @@
 ## 0.0.5
 
 - issue with track changes when prod web build is built is resolved.
+
+## 0.0.6
+
+- issue with JSArray replaced with List.

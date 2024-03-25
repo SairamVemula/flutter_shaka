@@ -3,7 +3,6 @@ library shaka.extern;
 
 // ignore: depend_on_referenced_packages
 import 'package:js/js.dart';
-import 'dart:js';
 import 'dart:html';
 
 @JS('UIConfiguration')

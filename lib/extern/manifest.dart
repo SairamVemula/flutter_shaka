@@ -1,7 +1,6 @@
 @JS('shaka.extern')
 library shaka.extern;
 
-import 'dart:js';
 import 'package:js/js.dart';
 
 import 'variant.dart';

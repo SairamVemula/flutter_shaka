@@ -1,7 +1,6 @@
 @JS('shaka.media')
 library shaka.media;
 
-import 'dart:js';
 import 'package:js/js.dart';
 
 import '../media/media.dart' as media;
